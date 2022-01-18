@@ -16,4 +16,3 @@ document.write("<h1>Ciao " + nomeUtente + "</h1>");
  * età con la seguente formula: annoCorrente - annoNascita;
  * Stampa l'età con un messaggio in un tag <p>
  */
-
