@@ -19,6 +19,9 @@ colori.push('Nero');
 //sort metodo per ordinare
 colori.sort();
 
+//reverse()
+colori.reverse();
+
 for(var i = 0; i < colori.length; i++){
     console.log(colori[i]);
 }
