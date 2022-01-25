@@ -10,6 +10,7 @@
     
 
     <!-- Creare una pagina di resoconto per acquisti online.
+        Aggiungi tramite i campi input il nome dell'item e il prezzo.
     Riepilogo oggetti acquistati, prezzo per ogni voce,
     totale senza iva, totale con iva, prezzo spedizione, 
     Grand Totale(totale con iva + spedizione).
@@ -18,14 +19,47 @@
 
     
     <h1 id="benvenuto"></h1>
+
+    <label>Item: </label><input type="text" id="item"><br>
+    <label>Prezzo: </label><input type="text" id="prezzo"><br>
+    <input type="button" value="carica" onclick="registra()">
+
     <ul id="listaOgg"></ul>
     <div id="resOgg">
         <div id="totale"></div>
         <div id="totaleIvato"></div>
-        <div id="spedizione"></div>
+        <div id="spedizione">Spedizione Sempre 6.99 €</div>
         <div id="grandTotal"></div>
     </div>
 
 
+    <script>
+        ////////////////////////
+        var items = ["pc", "tavoletta grafica", "panino"];
+        var prezzi = [550, 45, 1.20];
+        ///////////////////////////
+
+        
+        var totale = 0;
+
+        var elListaOgg = document.getElementById('listaOgg')
+        var elTotale = document.getElementById('totale');
+        var elTotaleIvato = document.getElementById('totaleIvato');
+        var elGrandTotal = document.getElementById('grandTotal');
+
+        for(var i= 0; i < items.length; i++){
+        elListaOgg.innerHTML += "<li>" + items[i] + " - " + prezzi[i] + "€ </li>";
+        totale += prezzi[i];
+        }
+    
+        var totaleIvato = (totale * 1.20);
+        var grandTotal = (totaleIvato + 6.99).toFixed(2);
+
+        elTotale.innerHTML = "Totale: € " + totale;
+        elTotaleIvato.innerHTML = "Totale Iva inclusa: € " + totaleIvato;
+
+        elGrandTotal.innerHTML = "Grand Totale: € " + grandTotal;
+
+    </script>
 </body>
 </html>
