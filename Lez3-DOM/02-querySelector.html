@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h2>Cose da comprare</h2>
+    <ul>
+        <li id="one" class="blue">Frutta</li>
+        <li id="two" class="blue">Verdura</li>
+        <li id="three" class="blue">Birra</li>
+        <li id="four" class="blue">Pizza</li>
+    </ul>
+
+    <h2>Cose da fare</h2>
+    <ul>
+        <li class="red">Dentista</li>
+        <li class="red">Studiare</li>
+        <li class="red">Fare la spesa</li>
+        <li class="red">Cazzeggiare</li>
+    </ul>
+
+    <script>
+        //QUERY SELECTOR utilizza una sintassi CSS
+        var elSingolo = document.querySelector('li#one');
+        elSingolo.innerHTML = "Mele";
+
+        var elSingolo2 = document.querySelector('li.blue'); //recupera solo la prima occorrenza
+        console.log(elSingolo2);
+        
+        var elSingolo3 = document.querySelector('li');
+        console.log(elSingolo3);
+
+
+        //QUERY SELECTOR ALL
+        var els = document.querySelectorAll('li.red');
+        console.log(els);
+
+        if(els.length > 0){
+            for (let i = 0; i < els.length; i++) {
+                // els[i].className = 'fontUp';  //sostituisce il nome della classe               
+                els[i].classList.add('fontUp'); //aggiungo alla classe red la classe fontUP
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

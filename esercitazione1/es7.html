@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  PrimoNum:<input type="number" name="" id="num1"><br>
+  Secondo Num:<input type="number" name="" id="num2"><br>
+  <input type="button" value="Controlla" onclick="verifica()">
+  
+  <div id="info"></div>
+  <script>
+
+    function controlla(x,y){
+      if(x != y){
+        //sottrazioni
+        numx = Math.abs(x - 100);
+        numy = Math.abs(y - 100);
+
+        if(numx < numy){
+          return x;
+        }
+        if(numx > numy){
+          return y
+        }
+        return ('hanno la stessa distanza')
+
+      }else{
+        return ('hai messo lo stesso numero')
+      }
+    }
+    var info = document.getElementById('info');
+
+    function verifica(){
+      var num1 = document.getElementById('num1').value;
+      var num2 = document.getElementById('num2').value;
+      
+      info.innerHTML = "il num più vicino è : " +  controlla(num1, num2);
+    }
+
+
+
+
+  </script>
+</body>
+</html>

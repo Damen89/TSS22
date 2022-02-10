@@ -1,0 +1,7 @@
+input[type='checkbox']:checked + label{
+    text-decoration: line-through;
+}
+
+.fontUp{
+    font-size: 24px;
+}
