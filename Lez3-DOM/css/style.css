@@ -10,3 +10,8 @@
 .fontUp{
     font-size: 24px;
 }
+
+.dimImg {
+    width: 150px;
+    height: auto;
+}

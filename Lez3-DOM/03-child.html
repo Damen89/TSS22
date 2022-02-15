@@ -19,10 +19,10 @@
 
     <h2>Cose da fare</h2>
     <ul>
-        <li class="red">Dentista</li>
-        <li class="red">Studiare</li>
-        <li class="red">Fare la spesa</li>
-        <li class="red">Cazzeggiare</li>
+        <li id="uno" class="red">Dentista</li>
+        <li id="due" class="red">Studiare</li>
+        <li id="tre" class="red">Fare la spesa</li>
+        <li id="quat" class="red">Ca****giare</li>
     </ul>
 
     <script>
@@ -31,6 +31,12 @@
 
         console.log(ulEL.firstElementChild);
         console.log(ulEL.firstChild);
+
+        var itemDue = document.getElementById('due');
+        var eltext = itemDue.firstChild.nodeValue;
+        eltext = eltext.replace("Studiare", "Programmare");
+        itemDue.firstChild.nodeValue = eltext;
+
 
     </script>
 

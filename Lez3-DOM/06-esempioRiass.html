@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h3>Devi fare tot cose</h3>
+    <ul>
+        <li id="uno">Dentista</li>
+        <li id="due">Studiare</li>
+        <li id="tre">Fare la spesa</li>
+        <li id="quat">Ca****giare</li>
+    </ul>
+
+
+    <script>
+        //aggiungo un elemento all'inizio e uno alla fine 
+        var list = document.getElementsByTagName('ul')[0];
+
+        //primo e ultimo EL
+        var primo = document.createElement('li');
+        primo.innerHTML = "Comprare Frutta";
+        primo.setAttribute('id', 'qualcosa')
+        // list.insertBefore(primo, list.firstElementChild);
+        //per inserirlo al secondo ? 
+        list.insertBefore(primo, list.children[1]);
+
+        var ultimo = document.createElement('li');
+        ultimo.innerHTML = "Andare al cinema";
+        list.appendChild(ultimo);
+
+        //aggiungo una classe a tutti
+        var lis = document.querySelectorAll('li');
+        //posso utilizzare un foreeach ma ricordando che la mia var lis è una collection
+        
+        //quindi va trasformata con l'operatore ... in array 
+        [...lis].forEach(element => {
+            element.setAttribute('class', 'red ');
+        });
+        
+        //posso utilizzare un for classico
+        for(var i = 0; i < lis.length; i++){
+            if(lis[i].hasAttribute('class'))
+            lis[i].classList.add('fontUp')
+        }
+
+        //Scrivo il conto di quante cose ho da fare
+        var titolo = document.querySelector('h3'); //prende la prima occorrenza di h3 ma avendone solo una mi conviene 
+        // titolo.innerHTML = "Devi fare " +  lis.length + ' cose';
+        var txtH3 = titolo.inn;
+        titolo.innerHTML = txtH3.replace('tot', lis.length);
+
+
+
+
+
+
+    
+
+
+
+
+
+    </script>
+
+</body>
+</html>

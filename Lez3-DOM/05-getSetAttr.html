@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <ul>
+        <li id="uno" class="red">Dentista</li>
+        <li id="due" class="red">Studiare</li>
+        <li id="tre" class="red">Fare la spesa</li>
+        <li id="quat" class="red">Ca****giare</li>
+    </ul>
+
+    
+
+    <script>
+        var primoItem = document.getElementsByTagName('li')[0];
+
+        if(primoItem.hasAttribute('class')){
+            var attr = primoItem.getAttribute('class'); //recupero il valore di una classe
+
+            var newDiv = document.createElement('div');
+            newDiv.innerHTML = "Il nome della classe è : " + attr;
+            var body = document.getElementsByTagName('body')[0];
+            body.appendChild(newDiv);
+        }
+
+
+        //SET ATTRIBUTE
+
+        primoItem.className = "blue";
+
+        var terzoItem = document.getElementById('tre');
+        terzoItem.setAttribute('class', 'blue');
+
+        //REMOVE ATTRIBUTE
+        var quartoItem = document.getElementById('quat');
+        if(quartoItem.hasAttribute('class')){
+            quartoItem.removeAttribute('class');
+        }
+
+        //AGGIUNGERE UNA CLASSE IN Più
+        // primoItem.setAttribute('class', 'fontUp')
+
+        primoItem.classList.add('fontUp');
+        // primoItem.classList.remove('blue');
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
