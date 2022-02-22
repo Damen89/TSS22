@@ -1,0 +1,14 @@
+[
+{
+    "nome":"Pippo",
+    "cognome": "Rossi",
+    "materie": ["Java", "Javascript", "Angular"],
+    "compagniClasse": ["Gianni", "Anna", "Giulia", "Silvio"]
+},
+{
+    "nome":"Paperino",
+    "cognome": "Bianchi",
+    "materie": ["Java", "Javascript", "Angular"],
+    "compagniClasse": ["Gianni", "Anna", "Giulia", "Silvio"]
+}
+]

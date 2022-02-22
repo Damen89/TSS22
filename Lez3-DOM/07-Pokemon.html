@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Inserire un titolo. Per ogni li: nome Pokemon con link alla pagina wiki,
+        immagine pokemon. Tutto ciò senza toccare l'HTML-->
+    <div>
+        <ul id="listaPok">
+            <li><img id="img1"></li>
+            <li><img id="img2"></li>
+            <li><img id="img3"></li> 
+            <li><img id="img4"></li>
+            <li>
+                <img id="img5">
+            </li>
+        </ul>
+
+        <select id="miaSel">
+            <option>charizard</option>
+            <option>cosmog</option>
+            <option>serperior</option>
+            <option>venusaur</option>
+            <option>jolteon</option>
+        </select>
+        <button onclick="scegliPok()">Scegli</button>
+    
+    </div>
+ <script src="js/myScript.js"></script>
+    
+    <script>
+       
+    var pokemons = ['charizard', 'cosmog', 'serperior', 'venusaur','jolteon'];
+    
+    var imgs = document.querySelectorAll('img'); //--> Nodelist == Array
+    var lis = document.querySelectorAll('ul#listaPok li');
+
+    //Settare solo immagini 
+    for(let i = 0; i < pokemons.length; i++){
+        imgs[i].setAttribute('src', 'img/'+pokemons[i]+'.jpg');
+        imgs[i].setAttribute('class', 'dimImg');
+        
+    //Costruire nomi e link 
+        var aLink = document.createElement('a');
+        // var nomePok = document.createTextNode(pokemons[i]);
+        // aLink.appendChild(nomePok);
+        aLink.innerHTML = pokemons[i];
+        aLink.setAttribute('href', 'https://wiki.pokemoncentral.it/'+pokemons[i]);
+        aLink.setAttribute('target', '_blank');
+        lis[i].appendChild(aLink)
+    }
+
+    
+    function scegliPok(){
+        var select = document.getElementById('miaSel');
+        var nomePok = document.getElementById('miaSel').children;
+        console.log(nomePok[select.selectedIndex].text);
+    }
+  
+    </script>    
+   
+</body>
+</html>
