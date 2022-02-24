@@ -1,0 +1,27 @@
+.dimDiv{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border: 1px solid black;
+    margin-top: 50px;
+}
+
+.warning{
+    color: orange;
+}
+
+.danger{
+    color: red;
+}
+
+.success{
+    color: green;
+}
+
+.bordoRed{
+    box-shadow: 5px 5px 5px red; margin: 10px
+}
+
+.bordoGreen{
+    box-shadow: 5px 5px 5px green; margin: 10px;
+}
