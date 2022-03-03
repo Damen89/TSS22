@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var numeri = [];
+
+        // for(var i=0; i < 5 ; i++){
+        //     var numero = Math.ceil( (Math.random() * 90));
+        //     if(numeri.indexOf(numero) != -1){
+        //         i--
+        //     }
+        //     else{
+        //         numeri.push(numero)
+        //     }
+        // }
+
+        // console.log(numeri);
+
+        //oppure
+
+        while (numeri.length < 5) {
+            var numero = Math.ceil((Math.random() * 90));
+            if (numeri.indexOf(numero) == -1) {
+                numeri.push(numero)
+            }
+        }
+
+        console.log(numeri);
+    </script>
+</body>
+
+</html>
