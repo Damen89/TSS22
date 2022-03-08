@@ -18,20 +18,26 @@
         <p class="text-center">Scrivi il tuo tweet con 280 caratteri</p>
         <div class="row">
             <div class="col-md-6 offset-md-3 p-0">
-                <textarea class="form-control m-0" id="messaggio" rows="5"></textarea>
+                <textarea class="form-control m-0" id="messaggio" rows="5" ></textarea>
             </div>
         </div>
-            
+
         <div class="row">
             <div id="caratteriRes" class="col-md-6 offset-md-3 text-right mt-3">280</div>
             <!--I caratteri devono scorrere live. Quando arrivo a 0 devo poter bloccare la possibilità di 
                                         di continuare a scrivere-->
-   
-            <button id="btn" class="col-md-6 offset-md-3 btn btn-primary mt-3">  Salva Tweet</button>
+
+            <button id="btn" class="col-md-6 offset-md-3 btn btn-primary mt-3"> Salva Tweet</button>
             <!--Questo pulsante scrive il tweet nel div sottostante e 
                                             permette anche di salvare un file di testo-->
         </div>
+
+        <div>
+            <p id="contenitoreMsg"></p>
+        </div>
     </div>
+
+
     <!-- Questo sotto viene mostrato solo quando lancio il tweet.
     Qui posso modificare il codice HTML  -->
     <!-- <h2>Il tuo tweet</h2>
@@ -49,17 +55,54 @@
 
     <script>
         var areaTxt = document.querySelector('#messaggio');
+        const btn = document.querySelector('#btn');
+        const contenitoreMsg = document.querySelector('#contenitoreMsg')
 
-        function contaCaratteri(){
-        
-            console.log("conta");
+        function contaCaratteri() {
+
+            var testoInserito, carRes, counter;
+            testoInserito = areaTxt.value;
+            carRes = document.querySelector('#caratteriRes');
+            counter = (280 - testoInserito.length);
+
+            carRes.innerHTML = counter;
+
+            if(counter <= 0){
+                var tweet = document.querySelector('#messaggio').value.substring(0, 280);
+                // document.querySelector('#messaggio').setAttribute('disabled', true)
+                //riporto nell'area di testo
+                areaTxt.value = tweet;
+            }
 
         }
 
+
+        function premiInvio(event) {
+            if (event.key == 'Enter') {
+                stampa();
+            }
+        }
+
+        function stampa() {
+            var msg = areaTxt.value;
+            if (msg.trim() == '') {
+                alert('Scrivi qualcosa prima di inviare');
+                areaTxt.blur();
+                areaTxt.value = ''
+            } else {
+                contenitoreMsg.innerHTML = msg;
+                areaTxt.value = '';
+                areaTxt.blur()
+            }
+        }
+
         areaTxt.addEventListener('keyup', contaCaratteri, false);
+        areaTxt.addEventListener('keyup', premiInvio, false);
+        btn.addEventListener('click', stampa, false);
 
 
-
+        // implementare Geolocalizzazione. Quando stampo il Tweet compare
+        //un messaggio "Hai twittato da Coordinate Torino"
     </script>
 </body>
 
