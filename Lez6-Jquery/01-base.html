@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="page">
+        <h1 id="titolo">Ciao da Jquery</h1>
+        <h2>Tecnologie corso</h2>
+        <h3>Linguaggi da studiare</h3>
+        <ul>
+            <li class="rosso" id="uno">Java</li>
+            <li class="rosso" id="due">Javascript</li>
+            <li class="rosso" id="tre">Html</li>
+            <li class="rosso" id="quattro">Css</li>
+            <li class="rosso" id="cinque">Database</li>
+        </ul>
+
+        <h3>Librerie</h3>
+        <ol>
+            <li class="rosso">JQuery</li>
+            <li class="rosso">Spring</li>
+            <li class="rosso">Angular</li>
+            <li class="rosso">H2</li>
+        </ol>
+    <button>Cancella lista</button>
+    </div>
+
+    <div id="demo"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict'
+
+        //SELETTORI
+        console.log( $('#titolo') )//equi documnet.getElementById() oppure document.querySelector()
+        $('#titolo').addClass('rosso');
+
+        //recupero più elementi dello stesso tipo utilizzando il filtro :header
+        $(':header').addClass('rosso');
+
+        //seleziono i primi due elementi li 
+        // $('li:lt(2)').addClass('barrato')
+        // $('li:even').addClass('barrato')
+        // $('li:odd').addClass('barrato')
+
+        //effetti
+        $('li:lt(3)').hide().fadeIn(3500);
+
+        $('li').on('click', function () {
+            // $(this).remove();
+            // $(this).hide();
+            $(this).fadeOut(2500);
+          });
+
+        // console.log($('li'));
+
+        $('ul li').on('click', function () { 
+            $(this).removeClass('rosso')
+         });
+
+         //****************READY FUNCTION***************
+        //  $(document).ready(function () { 
+        //      $('button').click(function () { 
+        //          $('ul').hide().delay(1500).fadeIn(1400);
+        //       })
+        //   })
+
+
+        $(function () { 
+            // //Ready Function abbreviata
+            // var $listaHtml = $('ol').html(); //recupera l'HTML della lista ol 
+            // console.log($listaHtml);
+            // $('#demo').append($listaHtml);
+
+            // var $listaLi = $('li').html(); //.html prende la prima occorrenza
+            // console.log($listaLi);
+
+            // $('li').append(' nuovo li: ' + $listaLi) //qui invece prendo tutti gli li
+
+            $('li:contains("Angular")').text('Angular 12, no-JS');
+            $('ul').before('<p class="rosso"> Appena aggiornati </p>');
+            $('ul li:last').after('<li> Ruby </li>'); //inserisce un altro li dopo l'ultimo li della ul
+            $('ul li:last').attr('id', 'sei').addClass('rosso');
+            $('li').css({
+                'background-color' : 'black',
+                'padding-left': '66px'
+            })
+
+            $('li').each(function () { 
+                var $idSelezionati = this.id;
+                $(this).append('<span class="rosso"> ' + $idSelezionati + '</span>');
+             })
+        });
+
+        //*******EVENTI********
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
