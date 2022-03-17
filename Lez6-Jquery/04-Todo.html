@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -20,14 +21,25 @@
             $('#btn').click(function () {
                 var $item = $('#item').val();
                 // console.log($item);
-                $('#lista').append('<li>' + $item + '<span class= "elim"> X </span></li>');
+                $('#lista').append('<li>' + $item + '<span class="elim"> X </span></li>');
                 $('#item').val('') //reset del campo
             });
-            
-            $(document).on('click', '.elim', function () { 
+
+            $('#item').keyup(function (event) { 
+                if(event.keyCode == 13){
+                    $('#btn').click(); //fico
+                }
+             })
+
+            $(document).on('click', '.elim', function () {
                 $(this).parent().remove();
-             });
-        })
+            });
+
+            $(document).on('click', 'li', function () {
+                $(this).toggleClass('barrato')
+            });
+
+        });
 
         // function elimina () { 
         //     $(this).parent().remove()
