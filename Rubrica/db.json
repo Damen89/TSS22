@@ -1,0 +1,21 @@
+{
+  "utenti": [
+    {
+      "id": 1,
+      "name": "Dario",
+      "phone": "12345678"
+    },
+    {
+      "name": "Gennaro",
+      "surname": "Esposito",
+      "salary": "1500",
+      "città": "Napoli",
+      "id": 3
+    }
+  ],
+  "profili": [
+    "base",
+    "admin",
+    "superUser"
+  ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">Inserisci</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+$('#btn').click(function(){
+
+    //aggiungi
+    
+    // $.ajax({
+    //     url: 'http://localhost:3000/utenti',
+    //     type: 'post',
+    //     dataType: 'json',
+    //     data: {
+    //                 name: "Gennaro",
+    //                 surname: "Esposito",
+    //                 salary: 1500,
+    //                 città: 'Napoli'
+    //             },
+    //             success: function (response) { 
+    //                 console.log(response);
+    //             }
+    //         });
+    
+    
+    $.ajax({
+        url:'http://localhost:3000/utenti/2',
+        type:'delete',
+        dataType:'json',
+        success:function(){
+            console.log('ok');
+        }
+    })
+}) 
+    </script>
+</body>
+</html>
