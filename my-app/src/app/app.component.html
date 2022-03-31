@@ -1,0 +1,25 @@
+<h1 class="rosso">Ciao dal component {{title}}</h1>
+
+<!-- Altro modo di mostrare una propr -->
+
+<h2 [innerText]="title" ></h2>
+
+<p class="star">Classe applicata normalmente</p>
+
+<p [class.star] = 'piaciuto'>Classe applicata con proprietà</p>
+
+<p [class] = 'classiAttuali' >Classe applicata con un oggetto</p>
+
+<button (click) = "classiAttuali.modStar()"> Cliccami </button>
+
+<br>
+
+<button (click) = 'alClick()'> clicca qui</button>
+
+<p>Ho inserito il primo component</p>
+<app-primo-comp></app-primo-comp>
+
+
+<aside class="secComp">
+    <app-secondo-comp></app-secondo-comp>
+</aside>
